@@ -2,7 +2,6 @@ package com.ecommerce.UserDetails;
 
 import com.ecommerce.UserDetails.Repository.UserRepository;
 import com.ecommerce.UserDetails.model.User;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
