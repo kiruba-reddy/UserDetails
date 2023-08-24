@@ -1,16 +1,10 @@
 package com.ecommerce.UserDetails.controller;
 
-import com.ecommerce.UserDetails.Mapper.UserMapper;
-import com.ecommerce.UserDetails.Service.UserServiceImplementation;
 import com.ecommerce.UserDetails.Service.UserServiceInterface;
 import com.ecommerce.UserDetails.dto.UserRequest;
 import com.ecommerce.UserDetails.dto.UserResponse;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
