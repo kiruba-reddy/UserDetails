@@ -1,14 +1,15 @@
 node{
+    environment{
+        DOCKERHUB_CREDENTIALS = credentials('docker-creds')
+    }
     stage('checkout'){
         git branch:'master', url:'https://github.com/kiruba-reddy/UserDetails.git', changelog: false, poll: false
     }
     stage('build'){
-        sh 'docker build -t microservice/user-app:latest .'
+        sh 'docker build -t kirubareddy/user-app:latest .'
     }
     stage('push'){
-        withCredentials([usernamePassword(credentialsId: 'docker-creds', passwordVariable: 'pass', usernameVariable: 'user')]) {
-            sh 'docker login -u $user -p $pass'
-            sh 'docker push microservice/user-app:latest'
-        }
+            sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -password-stdin'
+            sh 'docker push kirubareddy/user-app:latest'
     }
 }
