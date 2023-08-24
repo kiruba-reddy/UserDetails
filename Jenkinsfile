@@ -4,7 +4,7 @@ node{
     }
     stage('push'){
         withCredentials([usernamePassword(credentialsId: 'docker-creds', passwordVariable: 'pass', usernameVariable: 'user')]) {
-            sh 'docker login -u ${env.user} --password-stdin ${env.pass}'
+            sh 'docker login -u $user --password-stdin $pass'
             sh 'docker push microservice/user-app:latest'
         }
     }
