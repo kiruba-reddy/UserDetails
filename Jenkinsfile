@@ -1,2 +1,2 @@
-@Library('shared-lib') _
+@Library('shared-lib@master') _
 buildPipeline()
